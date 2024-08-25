@@ -8,12 +8,9 @@ abstract contract CTFSolver is Script {
         uint256 playerPrivateKey = vm.envOr("PLAYER", uint256(0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80));
         address challenge = vm.envAddress("CHALLENGE");
 
-        vm.startBroadcast(playerPrivateKey);
+        solve(challenge, playerPrivateKey, vm.addr(playerPrivateKey));
 
-        solve(challenge, vm.addr(playerPrivateKey));
-
-        vm.stopBroadcast();
     }
 
-    function solve(address challenge, address player) virtual internal;
+    function solve(address challenge, uint playerPrivateKey, address player) virtual internal;
 }
