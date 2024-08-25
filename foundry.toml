@@ -1,14 +1,13 @@
 [profile.default]
 src = "src"
 out = "out"
-libs = ["lib", "node_modules"]
-test = "test"
+libs = ["lib"]
 ffi = true
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 
-solc = '0.8.25'
+solc = '0.8.23'
 extra_output = ["devdoc", "userdoc", "storagelayout"]
-evm_version = 'london'
+evm_version = 'istanbul'
 use_literal_content = true
 fs_permissions = [{ access = "read-write", path = "./" }]
 
@@ -23,9 +22,3 @@ goerli = "https://ethereum-goerli.publicnode.com"
 ronin-mainnet = "https://api-partner.roninchain.com/rpc"
 ronin-testnet = "https://saigon-archive.roninchain.com/rpc"
 localhost = "http://localhost:8545"
-ctf = "http://localhost:8545"
-
-[profile.dependencies]
-forge-std = { version = "1.8.2" }
-solady = { version = "0.0.206" }
-"@openzeppelin-contracts" = { version = "4.9.3" }
